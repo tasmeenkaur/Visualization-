@@ -1,0 +1,29 @@
+application: ordinal-gear-93506
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: false
+instance_class: F1
+
+automatic_scaling:
+  min_idle_instances: 5
+  max_idle_instances: 7
+  min_pending_latency: 10ms
+  max_pending_latency: 25ms
+
+
+handlers:
+- url: /main.php
+  script: main.php
+
+- url: /
+  script: Register.php
+
+- url: /delete.php
+  script: /delete.php
+
+
+
+
+- url: /upload_handler.php
+  script: upload_handler.php
